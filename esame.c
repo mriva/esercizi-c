@@ -25,7 +25,7 @@ int main(void) {
         {"Valoriani", {4, 6, 7, 3}, 4}
     };
     float media_massima, media_totale;
-    char bravi[NUM_STUDENTI];
+    char bravi[NUM_STUDENTI * 50] = {'\0'};
     
     
     media_totale = analizzaStudenti(classe, NUM_STUDENTI, &media_massima);
@@ -64,7 +64,7 @@ float analizzaStudenti (Studente classe[NUM_STUDENTI], int len, float* media_mas
     return media_totale;
 }
 
-void studentiBravi (Studente classe[NUM_STUDENTI], int len, char bravi[NUM_STUDENTI]) {
+void studentiBravi (Studente classe[NUM_STUDENTI], int len, char* bravi) {
     int i, j, lung_nome;
     float media_totale = 0, media_studente = 0, inutile = 0;
     
@@ -79,6 +79,7 @@ void studentiBravi (Studente classe[NUM_STUDENTI], int len, char bravi[NUM_STUDE
         media_studente /= classe[i].n;
         if (media_studente > media_totale) {
             strcat(bravi, classe[i].cognome);
+            strcat(bravi, " ");
         }
     }
 }
