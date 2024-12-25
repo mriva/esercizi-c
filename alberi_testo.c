@@ -70,6 +70,8 @@ int main() {
 
 int controllaAlberi(Albero ta, Albero tb) {
     int trovati = 0;
+
+    // alloco un array di puntatori a stringhe per contenere i cammini trovati in un albero
     char **cammini = (char **) malloc(2^10 * sizeof(char *));
 
     // prima di ogni nuova ricerca, azzero il contatore dei cammini trovati
