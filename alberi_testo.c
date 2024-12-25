@@ -121,10 +121,10 @@ void trovaCamminiRic(Albero node, char arr[], char **cammini, int index) {
 
     arr[index] = node->c;
 
-    // se questa condizione è verificata signifia che ci troviamo in una foglia
+    // se questa condizione è verificata significa che ci troviamo in una foglia
     // quindi il cammino è stato trovato e lo salviamo nell'array di cammini
     if (node->left == NULL && node->right == NULL) {
-        cammini[indice_contatore] = (char *) malloc(1000 * sizeof(char));
+        cammini[indice_contatore] = (char *) malloc(10 * sizeof(char));
         arr[index + 1] = '\0';
         strcpy(cammini[indice_contatore], arr);
         indice_contatore++;
